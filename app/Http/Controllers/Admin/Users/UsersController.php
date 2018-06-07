@@ -53,7 +53,7 @@ class UsersController extends Controller
             ['password' => bcrypt($request->get('password'))]
         ));
 
-        return redirect()->route('admin.users.show', $user);
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -92,7 +92,7 @@ class UsersController extends Controller
             ['password' => bcrypt($request->get('password'))]
         ));
 
-        return redirect()->route('admin.users.show', $user);
+        return redirect()->route('admin.users.index');
     }
 
     /**

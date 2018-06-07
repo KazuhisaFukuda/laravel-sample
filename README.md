@@ -5,6 +5,7 @@
 * git clone https://github.com/KazuhisaFukuda/laravel-sample.git projectname
 * cd projectname
 * composer install
+* cp .env.example .env
 * php artisan key:generate
 * Database作成 and .env を修正
 * php artisan migrate --seed

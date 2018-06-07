@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\DB;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
+        /*DB::listen(function($query){
+            var_dump($query->sql,$query->bindings,$query->time);
+        });*/
         //
     }
 }

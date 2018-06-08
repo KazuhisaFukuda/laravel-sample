@@ -53,12 +53,12 @@ class TasksController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Task::create(array_merge(
+        $task = Task::create(array_merge(
             $request->validated(),
             ['user_id' => auth('user')->id()]
         ));
 
-        return redirect()->route('user.tasks.index');
+        return redirect()->route('user.tasks.show', $task);
     }
 
     /**
@@ -100,7 +100,7 @@ class TasksController extends Controller
     {
         $task->update($request->validated());
 
-        return redirect()->route('user.tasks.index');
+        return redirect()->route('user.tasks.show', $task);
     }
 
     /**

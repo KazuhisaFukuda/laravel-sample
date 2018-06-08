@@ -20,7 +20,7 @@
 * Multi-Auth (Admin / User)
 * Admin CRUD (Admin)
 * User CRUD (Admin)
-* Task CRUD (User)
+* Task CRUD (Admin / User)
 
 ## URL一覧
 

@@ -7,12 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Search</div>
                 <div class="panel-body">
-                    {{ Form::open(['route' => 'admin.users.index', 'method' => 'GET']) }}
+                    {{ Form::open(['route' => 'admin.tasks.index', 'method' => 'GET']) }}
                         <div class="col">
-                            {{ Form::label('name', 'Name：') }}
-                            {{ Form::input('text', 'name', null, ['placeholder' => 'Name']) }}
-                            {{ Form::label('name', 'E-Mail：') }}
-                            {{ Form::input('text', 'email', null, ['placeholder' => 'E-Mail']) }}
+                            {{ Form::token() }}
+                            {{ Form::label('user_name', 'User Name：') }}
+                            {{ Form::input('text', 'user_name', null, ['placeholder' => 'User Name']) }}
                             {{ Form::submit('Search', ['class' => 'btn btn-success']) }}
                         </div>
                     {{ Form::close() }}
@@ -21,31 +20,31 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     User List
-                    {{ link_to_route('admin.users.create', 'Create', [], ['class' => 'btn btn-primary']) }}
+                    {{ link_to_route('admin.tasks.create', 'Create', [], ['class' => 'btn btn-primary']) }}
                 </div>
                 <div class="panel-body">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>E-mail</th>
+                                <th>Task ID</th>
+                                <th>Target Date</th>
+                                <th>User Name</th>
+                                <th>Content</th>
                                 <th>Created_at</th>
-                                <th>Updated_at</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach($tasks as $task)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>{{ $user->updated_at }}</td>
+                                    <td>{{ $task->id }}</td>
+                                    <td>{{ $task->target_date }}</td>
+                                    <td>{{ $task->user->name }}</td>
+                                    <td>{{ $task->content }}</td>
+                                    <td>{{ $task->created_at }}</td>
                                     <td>
-                                        {{ link_to_route('admin.users.show', 'Detail', $user->id, ['class' => 'btn btn-primary']) }}
-                                        {{ link_to_route('admin.users.edit', 'Edit', $user->id, ['class' => 'btn btn-primary']) }}
+                                        {{ link_to_route('admin.tasks.show', 'Detail', $task->id, ['class' => 'btn btn-primary']) }}
+                                        {{ link_to_route('admin.tasks.edit', 'Edit', $task->id, ['class' => 'btn btn-primary']) }}
                                     </td>
                                 </tr>
                             @endforeach
@@ -53,7 +52,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    {{ $users->appends(Request::except('page'))->links() }}
+                    {{ $tasks->appends(Request::except('page'))->links() }}
                 </div>
             </div>
         </div>

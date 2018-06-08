@@ -21,4 +21,8 @@ Route::namespace('User')->as('user.')->group(function () {
     $this->resource('tasks', 'Tasks\TasksController');
     $this->put('tasks/{task}/complete', 'Tasks\TasksController@complete')->name('tasks.complete');
     $this->put('tasks/{task}/un_complete', 'Tasks\TasksController@unComplete')->name('tasks.un_complete');
+
+    // Profile
+    $this->get('user/profiles/edit', 'Profiles\ProfilesController@edit')->name('profiles.edit');
+    $this->put('user/profiles/update', 'Profiles\ProfilesController@edit')->name('profiles.update');
 });

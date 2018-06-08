@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+                    <p>{{ link_to_route('user.tasks.index', 'Task List') }}</p>
+                    <p>{{ link_to_route('user.profiles.edit', 'Profile Edit') }}</p>
                 </div>
             </div>
         </div>

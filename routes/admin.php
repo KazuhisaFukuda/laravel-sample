@@ -32,4 +32,7 @@ Route::prefix('admin')->as('admin.')->namespace('Admin')->group(function () {
 
     // Users
     $this->resource('users','Users\UsersController');
+
+    // Task
+    $this->resource('tasks', 'Tasks\TasksController');
 });

@@ -53,7 +53,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    {{ $admins->links() }}
+                    {{ $admins->appends(Request::except('page'))->links() }}
                 </div>
             </div>
         </div>

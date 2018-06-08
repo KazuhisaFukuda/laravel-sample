@@ -53,12 +53,12 @@ class AdminsController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Admin::create(array_merge(
+        $admin = Admin::create(array_merge(
             $request->validated(),
             ['password' => bcrypt($request->get('password'))]
         ));
 
-        return redirect()->route('admin.admins.index');
+        return redirect()->route('admin.admins.show', $admin);
     }
 
     /**
@@ -97,7 +97,7 @@ class AdminsController extends Controller
             ['password' => bcrypt($request->get('password'))]
         ));
 
-        return redirect()->route('admin.admins.index');
+        return redirect()->route('admin.admins.show', $admin);
     }
 
     /**

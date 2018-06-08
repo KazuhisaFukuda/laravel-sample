@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in!
+                    <p>{{ link_to_route('admin.admins.index', 'Admin List') }}</p>
+                    <p>{{ link_to_route('admin.users.index', 'User List') }}</p>
+                    <p>{{ link_to_route('admin.tasks.index', 'Tasks List') }}</p>
                 </div>
             </div>
         </div>

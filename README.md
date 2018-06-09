@@ -27,7 +27,7 @@ Laravel Ver. 5.5 を用いたサンプルアプリ
 
 * Multi-Auth (Admin / User)
   * Laravel Authを拡張し、ログイン処理で使用するModel(Admin / User)を分割 
-  * ルーティング定義ファイルである 'routes/web.php' は使用せず、 `routes/admin.php' 'routes/user.php' でAdmin・User用で分割
+  * ルーティング定義ファイルである 「routes/web.php」 は使用せず、 「routes/admin.php、routes/user.php」 でAdmin・User用で分割
 * Admin CRUD (Admin)
   * ResourceControllerを使用したCRUD 
 * User CRUD (Admin)
@@ -60,6 +60,7 @@ Laravel Ver. 5.5 を用いたサンプルアプリ
 |  | http://{domain}/tasks/create | タスク作成 |
 |  | http://{domain}/tasks/{task} | タスク詳細 |
 |  | http://{domain}/tasks/{task}/edit | タスク編集 |
+|  | http://{domain}/profiles/edit | プロフィール編集 |
 
 ## ログインユーザ
 

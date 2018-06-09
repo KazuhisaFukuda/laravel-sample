@@ -1,5 +1,13 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
+Laravel サンプルアプリ 
+====== 
+ 
+## 概要 
+Laravel Ver. 5.5 を用いたサンプルアプリ 
+ 
+主に勉強したこと等を実際に試したり、自身の備忘録的なもの 
+
 ## インストール
 
 * git clone https://github.com/KazuhisaFukuda/laravel-sample.git projectname
@@ -7,7 +15,7 @@
 * composer install
 * cp .env.example .env
 * php artisan key:generate
-* Database作成 and .env を修正
+* Database作成 と .env を修正
 * php artisan migrate --seed
 
 ## Composer で追加したパッケージ
@@ -18,9 +26,15 @@
 ## 機能一覧
 
 * Multi-Auth (Admin / User)
+  * Laravel Authを拡張し、ログイン処理で使用するModel(Admin / User)を分割 
+  * ルーティング定義ファイルである 'routes/web.php' は使用せず、 `routes/admin.php' 'routes/user.php' でAdmin・User用で分割
 * Admin CRUD (Admin)
+  * ResourceControllerを使用したCRUD 
 * User CRUD (Admin)
+  * ResourceControllerを使用したCRUD 
 * Task CRUD (Admin / User)
+  * ResourceControllerを使用したCRUD 
+  * Userだと自身のタスクしか閲覧・編集・削除出来ないようにしている
 
 ## URL一覧
 

@@ -40,7 +40,7 @@
 |  | http://{domain}/admin/tasks/create | タスク作成 |
 |  | http://{domain}/admin/tasks/{user} | タスク詳細 |
 |  | http://{domain}/admin/tasks/{user}/edit | タスク編集 |
-| User | http://localhost/login | ログイン |
+| User | http://{domain}/login | ログイン |
 |  | http://{domain}/ | ダッシュボード |
 |  | http://{domain}/tasks | タスク一覧 |
 |  | http://{domain}/tasks/create | タスク作成 |
